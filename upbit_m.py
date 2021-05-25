@@ -87,10 +87,16 @@ class b:
                     
                     if btc > 5000/get_current_price("KRW-ETH"):
                         sell_price = get_current_price("KRW-ETH")
-                        if buy_price * 1.01 < sell_price or buy_price * 0.95 >= sell_price:
+                        if buy_price * 1.01 < sell_price:
                             upbit.sell_market_order("KRW-ETH", btc*0.9995)
                             print("{}: Coin sell success!!! Price: {}".format(now,sell_price))
                             print("value : {}".format(sell_price - buy_price))
+                        elif buy_price * 0.96 >= sell_price:
+                            upbit.sell_market_order("KRW-ETH", btc*0.9995)
+                            print("{}: Coin panic sell success... Price: {}".format(now,sell_price))
+                            print("value : {}".format(sell_price - buy_price))
+                        else:
+                            pass
                 time.sleep(1)
             except Exception as e:
                 print(e)

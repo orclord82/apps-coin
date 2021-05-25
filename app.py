@@ -8,7 +8,7 @@ from thread_process import *
 from ramdom_name import ran_name
 app = Flask(__name__)
 
-cors = CORS(app, resources={r"*": {"origins": "http://localhost:8000"}})
+cors = CORS(app, resources={r"*": {"origins": "*"}})
 
 api = Api(
     app,
