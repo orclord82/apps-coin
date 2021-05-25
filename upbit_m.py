@@ -71,7 +71,7 @@ class b:
                 end_time = start_time + datetime.timedelta(minutes=1)
 
                 if start_time < now < end_time:
-                    target_price = get_target_price("KRW-ETH", 0.4)
+                    target_price = get_target_price("KRW-ETH", 0.3)
                     current_price = get_current_price("KRW-ETH")
                     mi60 = get_mi60("KRW-ETH")
                     if target_price < current_price and mi60 < current_price:
