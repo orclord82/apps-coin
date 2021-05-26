@@ -6,6 +6,8 @@ import multiprocessing
 import time
 from thread_process import *
 from ramdom_name import ran_name
+from random_lotto import *
+
 app = Flask(__name__)
 
 cors = CORS(app, resources={r"*": {"origins": "*"}})
@@ -23,8 +25,8 @@ api = Api(
 thread_List = list()
 @app.route("/myapi")
 def get_KRW():  # 멤버 함수의 파라미터로 name 설정
-    # return {"message":str(get_balance("KRW"))}    
-    return {"message":"4809"}  
+    value = lotto_a(10000)    
+    return {"message":value}  
 
 @app.route("/myapi/1")
 def get_KRW2():  # 멤버 함수의 파라미터로 name 설정
@@ -88,4 +90,5 @@ def get(name):  # 멤버 함수의 파라미터로 name 설정
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='localhost', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+    
