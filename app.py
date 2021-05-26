@@ -90,9 +90,5 @@ def get(name):  # 멤버 함수의 파라미터로 name 설정
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     app.run(debug=True, host='0.0.0.0', port=5000)
     
-=======
-    app.run(debug=True, host='0.0.0.0', port=5000)
->>>>>>> 75bab6954db26c23a6e934fe5ada43ffc7f04905
